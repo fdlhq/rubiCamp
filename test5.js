@@ -2,7 +2,7 @@ function stringManipulation(word) {
 
     var vocal = 'aiueo'
     if(vocal.includes(word.charAt(0)) === true)  {
-        // console.log(word.charAt(0))
+        // console.log(word.charAt(0))git 
         return word;
     } else if(vocal.includes(word.charAt(0)) === false)  {
         // console.log(word.charAt(0))
