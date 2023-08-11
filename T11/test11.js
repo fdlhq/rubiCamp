@@ -2,7 +2,7 @@ const readline = require("node:readline");
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
-  prompt: "Tebakan> ",
+  prompt: "Jawaban kamu> ",
 });
 const fs = require("fs");
 const data = fs.readFileSync("data.json", "utf-8");
