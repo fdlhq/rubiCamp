@@ -19,10 +19,10 @@ let katalisatorArray = 0;
 let kesalahan = 0;
 
 console.log(
-  "Selamat datang di permainan Tebak-tebakan, kamu akan di berikan pertanyaan dari file ini 'data.json'. untuk bermain, Jawablah dengan jawab yang sesuai."
+  "Selamat datang di permainan Tebak-tebakan, kamu akan di berikan pertanyaan dari file ini 'data.json'. \nUntuk bermain, Jawablah dengan jawab yang sesuai."
 );
 console.log(
-  "Gunakan skip untuk menangguhkan pertanyaannya, dan di akhir pertanyaan akan ditanyakan lagi. \n"
+  `Gunakan "skip" untuk menangguhkan pertanyaannya, dan di akhir pertanyaan akan ditanyakan lagi. \n`
 );
 console.log("pertanyaan:", obj[katalisatorArray].definition);
 
