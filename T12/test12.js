@@ -2,12 +2,12 @@ if (!process.argv[2]) {
   console.log(
     "Tolong sertakan nama file sebagai inputan soal-soalnya, Misalnya 'node test12.js data.json'. \n"
   );
-  process.exit();
+  process.exit(1);
 }
 
 const fs = require("fs");
 const readline = require("node:readline");
-const data = fs.readFileSync(`./${process.argv[2]}`, "utf-8");
+const data = fs.readFileSync(`${process.argv[2]}`, "utf-8");
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -33,6 +33,7 @@ rl.on("line", (isi) => {
     isi.toString().toLowerCase() == obj[katalisatorArray].term.toLowerCase()
   ) {
     console.log("\nSelamat anda benar! \n");
+    kesalahan = 0;
     katalisatorArray++;
 
     if (katalisatorArray == obj.length) {
@@ -42,6 +43,7 @@ rl.on("line", (isi) => {
     console.log("pertanyaan:", obj[katalisatorArray].definition);
   } else if (isi.toLowerCase() == "skip") {
     obj.push(obj[katalisatorArray]);
+    kesalahan = 0;
     console.log("\t");
     katalisatorArray++;
     console.log("pertanyaan", obj[katalisatorArray].definition.toLowerCase());
