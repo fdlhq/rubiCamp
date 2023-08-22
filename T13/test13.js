@@ -33,11 +33,10 @@ if (!command || command.toLowerCase() == "help") {
       break;
     case "task":
       for (let i in data[indx]) console.log(`${i}: ${data[indx][i]}`);
-
       break;
     case "add":
       if (tambahKegiatan) {
-        console.log(`${tambahKegiatan} telah ditambahkan`);
+        console.log(`'${tambahKegiatan}' telah ditambahkan`);
         data.push({
           ID: tambahID,
           title: tambahKegiatan,
