@@ -155,14 +155,14 @@ SELECT nim, SUM(sks) AS totalsks FROM kontrak GROUP BY nim;
 =========================
 --5-- Tampilkan mahasiswa yang mengambil mata kuliah data mining
 SELECT DISTINCT kontrak.nim, kontrak.idmatakuliah FROM kontrak JOIN matakuliah on matakuliah.id = kontrak.idmatakuliah
-WHERE kontrak.idmatakuliah = "1306"; 
+WHERE kontrak.idmatakuliah = "1306" AND matakuliah.nama LIKE '%data mining%'; 
 =========================
 
 
 
 =========================
 --6-- Tampilkan jumlah mahasiswa untuk setiap dosen
-SELECT nip, COUNT(nim) AS jumlahmahasiswa FROM kontrak GROUP BY nip; 
+SELECT *, (SELECT COUNT(DISTINCT nim) FROM kontrak WHERE kontrak.nip=dosen.nip) AS jumlahmahasiswa FROM dosen; 
 =========================
 
 
